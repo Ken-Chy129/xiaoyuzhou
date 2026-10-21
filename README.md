@@ -1,4 +1,4 @@
-<p align="center"><img src="design/icon-final.png" width="96" alt="小宇宙" /></p>
+<p align="center"><img src="web/public/logo.png" width="96" alt="小宇宙" /></p>
 
 <h1 align="center">小宇宙</h1>
 
