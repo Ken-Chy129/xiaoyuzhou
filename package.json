@@ -1,0 +1,13 @@
+{
+  "name": "me-server",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server/server.mjs",
+    "pair": "node server/cli.mjs pair"
+  },
+  "dependencies": {
+    "ws": "^8.22.0"
+  }
+}

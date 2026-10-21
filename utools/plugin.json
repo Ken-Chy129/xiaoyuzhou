@@ -1,0 +1,24 @@
+{
+  "pluginName": "小宇宙待办",
+  "description": "查看和新增今天的待办，和手机「小宇宙」同步",
+  "author": "ken",
+  "version": "1.2.0",
+  "main": "index.html",
+  "preload": "preload.js",
+  "logo": "logo.png",
+  "pluginSetting": { "single": true, "height": 520 },
+  "features": [
+    {
+      "code": "todo",
+      "explain": "看今天的待办，输入后回车加到今天",
+      "cmds": ["待办", "todo", "dd", "代办"]
+    },
+    {
+      "code": "add",
+      "explain": "把选中的文字加到今天的待办",
+      "cmds": [
+        { "type": "over", "label": "加到待办", "minLength": 2, "maxLength": 300 }
+      ]
+    }
+  ]
+}

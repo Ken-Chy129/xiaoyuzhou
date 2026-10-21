@@ -1,0 +1,19 @@
+# 依赖与构建产物
+node_modules/
+dist/
+build/
+.gradle/
+.kotlin/
+*.tsbuildinfo
+
+# 本机配置与签名（绝不能提交）
+android/local.properties
+android/keystore.properties
+*.jks
+*.keystore
+.env
+*.env
+
+# 运行时数据
+data/
+*.log
