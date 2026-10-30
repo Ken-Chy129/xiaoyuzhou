@@ -8,6 +8,8 @@
 
 把每天要看、要做的事收到一个入口里：早上刷资讯，白天记待办，离开电脑时在手机上盯着 Codex 跑任务，月底记一笔储蓄。数据只有一份，存在你自己的服务器上。
 
+![储蓄分析](docs/screenshots/web-savings.png)
+
 ## 有什么
 
 | 模块 | 能做什么 | 在哪用 |
@@ -17,6 +19,32 @@
 | 待办 | 今天的待办、日历按天查看、重复（每天/周/月/年）、重点、到点提醒（手机本地闹钟） | App、网页、uTools |
 | 备忘 | 随手记，和待办分开 | App |
 | 储蓄 | 按月记工资、奖金、五险一金和存款去向；看存款、储蓄率、年度对比、目标进度；指纹解锁 | App、网页 |
+
+## 截图
+
+> 截图里的数据都是生成的演示数据。
+
+**待办网页版**：左边日历，右边按天看，回车就加；键盘就能操作完。
+
+![待办网页版](docs/screenshots/web-todo.png)
+
+**uTools 插件**：快捷键呼出，回车加到今天，点文字就能编辑，跟随系统深浅色。
+
+<table>
+  <tr>
+    <td><img src="docs/screenshots/utools-light.png" alt="uTools 插件" /></td>
+    <td><img src="docs/screenshots/utools-edit.png" alt="uTools 编辑" /></td>
+  </tr>
+</table>
+
+**深色模式和手机浏览器**
+
+<table>
+  <tr>
+    <td width="72%"><img src="docs/screenshots/web-savings-dark.png" alt="深色模式" /></td>
+    <td><img src="docs/screenshots/web-phone.png" alt="手机浏览器" /></td>
+  </tr>
+</table>
 
 ## 结构
 
