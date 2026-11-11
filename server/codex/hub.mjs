@@ -280,7 +280,9 @@ export class CodexHub {
     if (!this.alerts || !m || m.scanning) return;
     m.scanning = true;
     try {
-      const res = await m.rpc("thread/list", { limit: 40, sortKey: "updated_at" });
+      // modelProviders: [] = 所有模型渠道。不传时 Codex 只返回「当前默认渠道」的会话，
+      // 机器上切换过 model_provider 后，新会话会被整批过滤掉（sg2 曾因此看不到 11-07 之后的会话）
+      const res = await m.rpc("thread/list", { limit: 40, sortKey: "updated_at", modelProviders: [] });
       const next = new Map();
       for (const t of res.data || []) {
         if (t.ephemeral || t.parentThreadId) continue;
@@ -320,7 +322,7 @@ export class CodexHub {
     const since = Date.now() / 1000 - 7 * 86400;
     const results = await Promise.allSettled(
       [...this.machines.values()].map(async (m) => {
-        const res = await m.rpc("thread/list", { limit: 40, sortKey: "updated_at" });
+        const res = await m.rpc("thread/list", { limit: 40, sortKey: "updated_at", modelProviders: [] });
         return (res.data || [])
           .filter((t) => !t.ephemeral && !t.parentThreadId)
           .map((t) => summarizeThread(m.name, t, [...m.approvals.values()].filter((a) => a.threadId === t.id)));
@@ -463,7 +465,7 @@ export class CodexHub {
 
   async recentDirs(machine) {
     const m = this.machine(machine);
-    const res = await m.rpc("thread/list", { limit: 60, sortKey: "updated_at" });
+    const res = await m.rpc("thread/list", { limit: 60, sortKey: "updated_at", modelProviders: [] });
     const seen = new Map();
     for (const t of res.data || []) if (t.cwd && !seen.has(t.cwd)) seen.set(t.cwd, t.updatedAt);
     return [...seen.keys()].slice(0, 12);

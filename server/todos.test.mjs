@@ -52,11 +52,12 @@ test("每周、每年", () => {
 
 test("增删改与完成", () => {
   t._reset();
-  const a = t.create({ text: "  交房租 ", due: "2026-11-01", repeat: { unit: "month" } });
+  // create 用真实当前时间把重复事项挪到「下一次」，所以起始日要放在未来，测试才不随日期过期
+  const a = t.create({ text: "  交房租 ", due: "2099-11-01", repeat: { unit: "month" } });
   assert.equal(a.text, "交房租");
   assert.deepEqual(a.repeat, { unit: "month", every: 1, day: 1 });
   const d = t.done(a.id, NOW);
-  assert.equal(d.due, "2026-12-01");
+  assert.equal(d.due, "2099-12-01");
   assert.equal(d.done, false);
   assert.equal(d.doneCount, 1);
 
